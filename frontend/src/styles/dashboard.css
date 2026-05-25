@@ -1,0 +1,36 @@
+.layout-container{
+display:flex;
+min-height:100vh;
+background:#f1f5f9;
+}
+
+.layout-main{
+flex:1;
+width:100%;
+min-height:100vh;
+transition:0.3s;
+}
+
+.layout-content{
+padding:90px 25px 25px;
+width:100%;
+box-sizing:border-box;
+}
+
+.dashboard-page{
+width:100%;
+}
+
+.dashboard-heading{
+font-size:28px;
+font-weight:600;
+margin-bottom:25px;
+color:#1e293b;
+}
+
+@media(max-width:768px){
+
+.layout-content{
+padding:85px 15px 20px;
+}
+}
