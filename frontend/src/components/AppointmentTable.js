@@ -6,7 +6,7 @@ import "../styles/table.css";
 function AppointmentTable({
   appointments,updateStatus,
 }) {
-
+console.log(appointments);
   return (
 
 <div className="table-container">
@@ -64,7 +64,9 @@ function AppointmentTable({
 {appointment.appointmentTime}
 </td>
 
-
+<td>
+{appointment.reason}
+</td>
 <td>
 
 {updateStatus ? (

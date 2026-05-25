@@ -97,12 +97,11 @@ function BookAppointment() {
             },
           }
         );
+        console.log(formData);
 
-      alert(
-        response.data.message
-      );
-      window.location.reload();
-      fetchAppointments();
+      alert(response.data.message);
+
+    window.location.reload();
 
       setFormData({
         patientId: "",

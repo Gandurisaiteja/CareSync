@@ -8,7 +8,7 @@ const createAppointment = async (
 ) => {
 
   try {
-
+ 
     const {
       patientId,
       doctorId,
@@ -47,7 +47,7 @@ const createAppointment = async (
           "Doctor already booked for this slot",
       });
     }
-
+ console.log(req.body);
     // create appointment
     const appointment =
       await Appointment.create({

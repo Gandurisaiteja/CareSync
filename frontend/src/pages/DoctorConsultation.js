@@ -87,43 +87,55 @@ function DoctorConsultation() {
 
 
   const handleSubmit =
-    async (e) => {
+async (e) => {
 
-      e.preventDefault();
+e.preventDefault();
 
-      try {
+if (
+!formData.patientId ||
+!formData.notes ||
+formData.notes.trim() === ""
+) {
 
-        const response =
-          await API.post(
-            "/consultations",
-            formData,
-            {
-              headers: {
-                Authorization:
-                  `Bearer ${localStorage.getItem("token")}`,
-              },
-            }
-          );
+alert(
+"Please fill all fields"
+);
 
-        alert(
-          response.data.message
-        );
+return;
+}
 
-        fetchNotes();
+try {
 
-        setFormData({
-          patientId: "",
-          notes: "",
-        });
+const response =
+await API.post(
+"/consultations",
+formData,
+{
+headers: {
+Authorization:
+`Bearer ${localStorage.getItem("token")}`,
+},
+}
+);
 
-      } catch (error) {
+alert(
+response.data.message
+);
 
-        alert(
-          error.response.data.message
-        );
-      }
-    };
+fetchNotes();
 
+setFormData({
+patientId: "",
+notes: "",
+});
+
+} catch (error) {
+
+alert(
+error.response.data.message
+);
+}
+};
 
   return (
 
